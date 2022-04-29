@@ -19,7 +19,8 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
         "phpunit/phpunit": "^9.5.10",
-        "barryvdh/laravel-ide-helper": "^2.12"
+        "barryvdh/laravel-ide-helper": "^2.12",
+        "yajra/laravel-datatables-oracle": "^9.18"
     },
     "autoload": {
         "psr-4": {

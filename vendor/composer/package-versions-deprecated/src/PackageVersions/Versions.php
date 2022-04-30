@@ -61,6 +61,7 @@ final class Versions
   'nikic/php-parser' => 'v4.13.2@210577fe3cf7badcc5814d99455df46564f3c077',
   'opis/closure' => '3.6.3@3d81e4309d2a927abbe66df935f4bb60082805ad',
   'phpoption/phpoption' => '1.8.1@eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15',
+  'predis/predis' => 'v1.1.10@a2fb02d738bedadcffdbb07efa3a5e7bd57f8d6e',
   'psr/container' => '1.1.2@513e0666f7216c7459170d56df27dfcefe1689ea',
   'psr/event-dispatcher' => '1.0.0@dbefd12671e8a14ec7f180cab83036ed26714bb0',
   'psr/http-client' => '1.0.1@2dfb5f6c5eff0e91e20e913f8c5452ed95b86621',
@@ -153,7 +154,7 @@ final class Versions
   'sebastian/type' => '3.0.0@b233b84bc4465aff7b57cf1c4bc75c86d00d6dad',
   'sebastian/version' => '3.0.2@c6c1022351a901512170118436c764e473f6de8c',
   'theseer/tokenizer' => '1.2.1@34a41e998c2183e22995f158c581e7b5e755ab9e',
-  'laravel/laravel' => 'dev-2-ui@83601f693ff624272c0be5f207eb1d52d11be670',
+  'laravel/laravel' => 'dev-3-advance-topic@c9b5a30686a3d6ca67260d049b141cc158295ea7',
 );
 
     private function __construct()

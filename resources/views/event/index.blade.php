@@ -25,6 +25,29 @@ div {text-align: center;}
 </head>
 
 <body>
+    <div class="text-right">
+    
+    </div>
+   
+    <div class="card-body">
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+        {{ 'Welcome '.Auth::user()->name }}<br>
+        {{-- {{ __('Click here to logout : ') }} --}}
+        <h6 style="font-size:1.0vw">Click here to logout :</h6>
+        <a class="" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+            <button class="btn btn-outline-danger" type="submit"><i class="fa fa-sign-out"></i></button>
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+    </div>
     <h1 style="font-size:2vw">Accenture Coding Test</h1>
     {{-- <h1 style="font-family: Courier New, Courier, monospace">This is a heading</h1> --}}
 <br><br><br><br>

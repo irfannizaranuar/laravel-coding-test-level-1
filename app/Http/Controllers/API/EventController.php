@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Event;
 use Yajra\DataTables\DataTables;
 use Redirect,Response;
@@ -11,6 +12,11 @@ use Redirect,Response;
 
 class EventController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(){
 
         $events = Event::paginate(3);
@@ -55,14 +61,22 @@ class EventController extends Controller
             'name' => 'required'
         ]);
 
-        /* $event = new Event();
+        $event = new Event();
         $event->name = $request->name;
         $event->slug = $request->slug;
 
-        $event->save(); */
+        // $event->save();
 
-        Event::create($request->all());
-        notify()->success('event has been stored!');
+        //Event::create($request->all());
+        if($event->save()){
+            \Mail::send('test', $event->toArray(), function($message)use($event){
+                $message->to('abcd123@gmail.com', 'Sir Alex Ferguson') 
+                    ->subject("New Event :".$event->name." has been created");
+            });
+
+            notify()->success('event has been stored!');
+        }
+        
 
         return redirect('/api/v1/events');
     }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,7 @@ Route::post('/api/v1/events ', [App\Http\Controllers\API\EventController::class,
 Route::patch('/api/v1/events/{id}', [App\Http\Controllers\API\EventController::class, 'patch_events']);
 
 Route::get('/api/v1/events/search ', [App\Http\Controllers\API\EventController::class, 'event_search']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

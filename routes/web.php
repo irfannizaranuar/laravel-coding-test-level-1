@@ -17,16 +17,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/api/v1/events', [App\Http\Controllers\API\EventController::class, 'index']);
+Route::get('/api/v1/events', [App\Http\Controllers\API\EventController::class, 'index'])->name('index');;
 
 Route::get('/api/v1/events/active-events', [App\Http\Controllers\API\EventController::class, 'active_events']);
 
-Route::get('/api/v1/events/{id}', [App\Http\Controllers\API\EventController::class, 'events']);
+Route::get('/api/v1/events/{event}/edit', [App\Http\Controllers\API\EventController::class, 'event_edit']);
 
-Route::post('/api/v1/events ', [App\Http\Controllers\API\EventController::class, 'create_events']);
+Route::put('/api/v1/events/{event}', [App\Http\Controllers\API\EventController::class, 'event_update']);
 
-Route::put('/api/v1/events/{id}', [App\Http\Controllers\API\EventController::class, 'put_events']);
+Route::delete('/api/v1/events/{event}', [App\Http\Controllers\API\EventController::class, 'event_destroy']);
+
+// Store event
+Route::get('/api/v1/events/create ', [App\Http\Controllers\API\EventController::class, 'event_create']);
+Route::post('/api/v1/events ', [App\Http\Controllers\API\EventController::class, 'event_store']);
+
 
 Route::patch('/api/v1/events/{id}', [App\Http\Controllers\API\EventController::class, 'patch_events']);
 
-Route::delete('/api/v1/events/{id}', [App\Http\Controllers\API\EventController::class, 'delete_events']);
+Route::get('/api/v1/events/search ', [App\Http\Controllers\API\EventController::class, 'event_search']);

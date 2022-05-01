@@ -11,7 +11,9 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "laravel/ui": "*",
         "mckenziearts/laravel-notify": "^2.3",
+        "predis/predis": "^1.1",
         "ramsey/uuid": "^4.2"
     },
     "require-dev": {
